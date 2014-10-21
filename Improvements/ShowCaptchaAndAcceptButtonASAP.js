@@ -6,7 +6,6 @@
 // @author       Eric Fraze
 // @match        https://www.mturk.com/*
 // @grant        GM_addStyle
-// @require     http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js
 // ==/UserScript==
 
 // Proprietary GreaseMonkey function to add a style element to the page.
