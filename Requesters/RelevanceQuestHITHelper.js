@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name       RelevanceQuest HIT Helper
 // @namespace  http://ericfraze.com
-// @version    0.7
+// @version    0.8
 // @description  (mTurk) Selects all "Non Adult" radio buttons in "Flag images - (WARNING: This HIT may contain adult content. Worker discretion is advised.)" Clicking on an image flags it as explicit. Clicking on an image twice flags it as fetish. Right clicking on an image flags it as gruesome. Middle clicking an image flags it as suggestive.
 // @include    https://s3.amazonaws.com/mturk_bulk/hits/*
 // @include    https://www.mturkcontent.com/dynamic/hit*
@@ -11,7 +11,8 @@
 
 $(document).ready(function() {
     // Make sure we are on the right HIT
-    if ( ("label:contains('We do our best to prevent illegal content from being included in the task.')").length ) {
+    if ( ( $("label[for='illegal_content']:contains('We do our best to prevent illegal content from being included in the task.')").length ) 
+                                                                                            && ( $("#__Result1_0[value='PERVERSION']").length ) ) {
         // Check all radi buttons as non-adult
     	$("input[value='NOT_ADULT']").prop('checked', true);
         
