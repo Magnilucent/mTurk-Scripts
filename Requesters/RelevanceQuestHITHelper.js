@@ -10,59 +10,63 @@
 // ==/UserScript==
 
 $(document).ready(function() {
-    // Check all radi buttons as non-adult
-	$("input[value='NOT_ADULT']").prop('checked', true);
-    
-    // Check "fetish" on double click
-    $("img").dblclick( function() {
-        // Check the button
-        $(this).parents("td").find("input[value='PERVERSION']").click();
+    // Make sure we are on the right HIT
+    if ( ("label:contains('We do our best to prevent illegal content from being included in the task.')").length ) {
+        // Check all radi buttons as non-adult
+    	$("input[value='NOT_ADULT']").prop('checked', true);
+        
+        // Check "fetish" on double click
+        $("img").dblclick( function() {
+            // Check the button
+            $(this).parents("td").find("input[value='PERVERSION']").click();
 
-        // Focus so the enter key can submit the HIT
-        $(this).parents("td").find("input[value='PERVERSION']").focusWithoutScrolling();
+            // Focus so the enter key can submit the HIT
+            $(this).parents("td").find("input[value='PERVERSION']").focusWithoutScrolling();
 
-        // Change image opacity so the user knows the script ran correctly
-        $(this).css("opacity", "0.6");
-    });
-    
-    // All other mouse clicks
-    $('img').mousedown(function(event) {
-        switch (event.which) {
-            case 1:
-                // Check "Adult" on left click
-                $(this).parents("td").find("input[value='EXPLICIT']").click();
-                $(this).parents("td").find("input[value='EXPLICIT']").focusWithoutScrolling();
-                $(this).css("opacity", "0.6");
-                break;
-            case 2:
-                // Check "Suggestive" on middle click
-                $(this).parents("td").find("input[value='SUGGESTIVE']").click();
-                $(this).parents("td").find("input[value='SUGGESTIVE']").focusWithoutScrolling();
-                $(this).css("opacity", "0.6");
-                break;
-            case 3:
-                // Check "Gruesome" on right click
-                $(this).parents("td").find("input[value='GRUESOME']").click();
-                $(this).parents("td").find("input[value='GRUESOME']").focusWithoutScrolling();
-                $(this).css("opacity", "0.6");
-                break;
-        }
-    });
-});
+            // Change image opacity so the user knows the script ran correctly
+            $(this).css("opacity", "0.6");
+        });
+        
+        // All other mouse clicks
+        $('img').mousedown(function(event) {
+            switch (event.which) {
+                case 1:
+                    // Check "Adult" on left click
+                    $(this).parents("td").find("input[value='EXPLICIT']").click();
+                    $(this).parents("td").find("input[value='EXPLICIT']").focusWithoutScrolling();
+                    $(this).css("opacity", "0.6");
+                    break;
+                case 2:
+                    // Check "Suggestive" on middle click
+                    $(this).parents("td").find("input[value='SUGGESTIVE']").click();
+                    $(this).parents("td").find("input[value='SUGGESTIVE']").focusWithoutScrolling();
+                    $(this).css("opacity", "0.6");
+                    break;
+                case 3:
+                    // Check "Gruesome" on right click
+                    $(this).parents("td").find("input[value='GRUESOME']").click();
+                    $(this).parents("td").find("input[value='GRUESOME']").focusWithoutScrolling();
+                    $(this).css("opacity", "0.6");
+                    break;
+            }
+        });
 
-// Stop right click menu
-document.addEventListener("contextmenu", function(e){
-    if (e.target.nodeName === "IMG") {
-        e.preventDefault();
+        // Stop right click menu
+        document.addEventListener("contextmenu", function(e){
+            if (e.target.nodeName === "IMG") {
+                e.preventDefault();
+            }
+        }, false);
+
+        // Stop scrolling on focus of radio button
+        $.fn.focusWithoutScrolling = function(){
+          var x = window.scrollX, y = window.scrollY;
+          this.focus();
+          window.scrollTo(x, y);
+        };
+
+        // Stop scrolling on middle mouse press
+        $(document.body).on("mousedown", function (e) { e.preventDefault(); } );
+
     }
-}, false);
-
-// Stop scrolling on focus of radio button
-$.fn.focusWithoutScrolling = function(){
-  var x = window.scrollX, y = window.scrollY;
-  this.focus();
-  window.scrollTo(x, y);
-};
-
-// Stop scrolling on middle mouse press
-$(document.body).on("mousedown", function (e) { e.preventDefault(); } );
+});
