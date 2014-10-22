@@ -19,11 +19,11 @@ $(document).ready(function() {
 			// Select each return button
 			$("a[href*='mturk/return']").each(function() {
 				// Add custom text next to return button text
-				$(this).parents(':eq(2)').children(":first-child").append('<td><img src="/images/spacer.gif" width="20" height="8" border="0"></td>');
+				$(this).parents(':eq(2)').children(":first-child").append('<td><img src="/media/spacer.gif" width="20" height="8" border="0"></td>');
 				$(this).parents(':eq(2)').children(":first-child").append('<td align="center" nowrap="">Return & Accept?</td>');
 				// Add custom button next to return button
-				$(this).parents(':eq(1)').append('<td><img src="/images/spacer.gif" width="20" height="1" border="0"></td>');
-				$(this).parents(':eq(1)').append('<td><a id="returnAccept" href="#"><img src="/images/skip_hit.gif" alt="" border="0" width="68" height="22"></a></td>');
+				$(this).parents(':eq(1)').append('<td><img src="/media/spacer.gif" width="20" height="1" border="0"></td>');
+				$(this).parents(':eq(1)').append('<td><a id="returnAccept" href="#"><img src="/media/skip_hit.gif" alt="" border="0" width="68" height="22"></a></td>');
 			});
 		}
 
