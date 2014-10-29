@@ -23,27 +23,27 @@ $(document).ready(function() {
 			if (evt.which === 1) { // left-click
 				if (evt.originalEvent.detail === 2) {
 					$("input[value='hardcore']", par).click();
-					$("input[value='hardcore']", par).focusWithoutScrolling();
+					$("#SubmitButton").focusWithoutScrolling();
 				} else if (evt.originalEvent.detail === 1) {
 					$("input[value='explicit']", par).click();
-					$("input[value='explicit']", par).focusWithoutScrolling();
+					$("#SubmitButton").focusWithoutScrolling();
 				}
 			}
 
 			if (evt.which === 2) { // middle-click
 				if (evt.originalEvent.detail === 1) {
 					$("input[value='notadult']", par).click();
-					$("input[value='notadult']", par).focusWithoutScrolling();
+					$("#SubmitButton").focusWithoutScrolling();
 				}
 			}
 
 			if (evt.which === 3) { // right-click
 				if (evt.originalEvent.detail === 2) {
 					$("input[value='educationalnudity']", par).click();
-					$("input[value='educationalnudity']", par).focusWithoutScrolling();
+					$("#SubmitButton").focusWithoutScrolling();
 				} else if (evt.originalEvent.detail === 1) {
 					$("input[value='erotic']", par).click();
-					$("input[value='erotic']", par).focusWithoutScrolling();
+					$("#SubmitButton").focusWithoutScrolling();
 				}
 			}
 		});
