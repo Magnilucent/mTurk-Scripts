@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         (mTurk) ProductRnR HIT Helper 
 // @namespace    http://ericfraze.com
-// @version      0.1
+// @version      0.2
 // @description  (mTurk) Selects "Non-Adult" for all images. Click the image to flag. Left mouse selects "Explicit". Double click (left mouse) selects "Hard-Core". Right mouse selects "Suggestive". Double click (right mouse) selects "Educational Nudity". Middle mouse reverts back to "Non-Adult".
 // @author       Eric Fraze
 // @match    https://s3.amazonaws.com/mturk_bulk/hits/*
