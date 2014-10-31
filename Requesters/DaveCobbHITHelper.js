@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         (mTurk) Dave Cobb HIT Helper 
 // @namespace    http://ericfraze.com
-// @version      0.4
+// @version      0.5
 // @description  (mTurk) Press "1" to select "Yes, we missed some faces/heads!" and advance. Press "2" to select "No, every single face/head has been found." and advance. "3" submits.
 // @author       Eric Fraze
 // @match        https://dbxtagger.appspot.com/*
