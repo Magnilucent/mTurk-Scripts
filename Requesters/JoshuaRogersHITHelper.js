@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         joshua l rogers HIT Helper
 // @namespace    http://ericfraze.com
-// @version      0.1
+// @version      0.2
 // @description  Opens the link for "joshua l rogers".
 // @author       Eric Fraze
 // @match        https://www.mturkcontent.com/dynamic/*
